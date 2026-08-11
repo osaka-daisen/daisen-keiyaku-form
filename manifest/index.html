@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#1f6f5c">
+<title>産業廃棄物処理委託契約 お客様情報のご入力｜大泉衛生株式会社</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --sub:#5b6470; --line:#d9dee5; --line2:#eef1f5;
+    --bg:#f4f6f9; --card:#ffffff; --accent:#1f6f5c; --accent-d:#155445;
+    --warn:#b4451f; --chip:#eef4f2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif;
+    font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:18px 18px 80px;}
+
+  header.app{
+    display:flex; align-items:center; gap:14px;
+    padding:16px 18px; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; margin-bottom:14px;
+  }
+  header.app .logo{
+    width:46px; height:46px; border-radius:10px; background:var(--accent);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:20px; flex:none;
+  }
+  header.app h1{font-size:17px; margin:0; letter-spacing:.02em; line-height:1.4}
+  header.app .sub{font-size:12px; color:var(--sub); margin-top:3px}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:14px; overflow:hidden}
+  .card > .chead{
+    padding:12px 18px; border-bottom:1px solid var(--line2);
+    font-weight:700; font-size:14px; color:#fff; background:var(--accent);
+  }
+  .card > .chead .n{
+    display:inline-flex; width:22px; height:22px; border-radius:50%;
+    background:rgba(255,255,255,.22); align-items:center; justify-content:center;
+    font-size:12px; margin-right:8px;
+  }
+  .card .cbody{padding:16px 18px}
+
+  .lead{font-size:14px; color:var(--sub)}
+  .lead strong{color:var(--ink)}
+  .steps{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 0; padding:0; list-style:none; font-size:13px}
+  .steps li{
+    flex:1 1 150px; background:var(--chip); border:1px solid #cfe3dc; color:var(--accent-d);
+    border-radius:8px; padding:9px 11px;
+  }
+  .steps li b{display:block; font-size:11px; letter-spacing:.08em; opacity:.75}
+
+  .field{margin-bottom:18px}
+  .field:last-child{margin-bottom:4px}
+  .field .lab{display:block; font-weight:700; font-size:14px; margin-bottom:2px}
+  .field .req,.field .opt{
+    font-size:11px; font-weight:700; border-radius:4px; padding:1px 6px; margin-left:7px; vertical-align:2px;
+  }
+  .field .req{background:#fdecea; color:var(--warn); border:1px solid #f3c7be}
+  .field .opt{background:#eef1f5; color:var(--sub); border:1px solid var(--line)}
+  .field .guide{
+    font-size:12.5px; color:var(--sub); margin:4px 0 7px; padding-left:11px;
+    border-left:3px solid #cfe3dc; white-space:pre-line;
+  }
+  .field .guide .ex{color:var(--accent-d)}
+  input,select,textarea{
+    width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px;
+    font:inherit; color:var(--ink); background:#fff;
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid #bfe0d6; border-color:var(--accent)}
+  textarea{resize:vertical; min-height:84px}
+  input.bad,textarea.bad{border-color:var(--warn); background:#fffafa}
+  .err{color:var(--warn); font-size:12.5px; font-weight:700; margin-top:5px; display:none}
+  .err.show{display:block}
+
+  .samecheck{
+    display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700;
+    background:var(--chip); border:1px solid #cfe3dc; color:var(--accent-d);
+    border-radius:8px; padding:9px 11px; margin-bottom:14px; cursor:pointer;
+  }
+  .samecheck input{width:auto; margin:0; flex:none; accent-color:var(--accent)}
+
+  .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+  button{
+    font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff;
+    color:var(--ink); border-radius:9px; padding:12px 20px; font-weight:700;
+  }
+  button.primary{background:var(--accent); border-color:var(--accent); color:#fff; flex:1 1 240px}
+  button.primary:hover{background:var(--accent-d)}
+  button:disabled{opacity:.5; cursor:not-allowed}
+
+  .notice{
+    font-size:13px; background:#fff7ed; border:1px solid #f0d5b8; color:#8a5220;
+    padding:11px 13px; border-radius:8px; margin-bottom:14px;
+  }
+  .notice.ok{background:var(--chip); border-color:#bfe0d6; color:var(--accent-d)}
+
+  .confirm dl{margin:0; border-top:1px solid var(--line2)}
+  .confirm .row{display:flex; gap:12px; padding:10px 2px; border-bottom:1px solid var(--line2); font-size:14px}
+  .confirm .row dt{flex:0 0 38%; color:var(--sub); font-weight:700; margin:0; font-size:13px}
+  .confirm .row dd{flex:1; margin:0; word-break:break-word}
+  .confirm .row dd.empty{color:#aab}
+  .confirm h3{
+    font-size:13px; margin:18px 0 0; color:var(--accent-d);
+    background:var(--chip); border-radius:999px; padding:4px 12px; display:inline-block;
+  }
+
+  .done{text-align:center; padding:26px 10px}
+  .done .mark{
+    width:64px; height:64px; border-radius:50%; background:var(--chip); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:34px; margin:0 auto 14px;
+  }
+  .done h2{font-size:19px; margin:0 0 8px}
+  .done p{color:var(--sub); font-size:14px; margin:0 auto; max-width:460px}
+
+  footer.app{text-align:center; font-size:12px; color:var(--sub); padding:6px 0 0; line-height:1.9}
+  .hide{display:none !important}
+
+  @media print{
+    body{background:#fff}
+    .noprint{display:none !important}
+    .card{border-color:#999; page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app">
+    <div class="logo">大泉</div>
+    <div>
+      <h1>産業廃棄物処理委託契約　お客様情報のご入力</h1>
+      <div class="sub">大泉衛生株式会社</div>
+    </div>
+  </header>
+
+  <!-- ============ 入力画面 ============ -->
+  <div id="screen-form">
+
+    <div class="card noprint">
+      <div class="cbody">
+        <p class="lead" style="margin:0">
+          このたびはお引き合いをいただき、誠にありがとうございます。<br>
+          産業廃棄物処理委託契約書の作成に必要な情報を、<strong>下記のフォームにご入力ください</strong>。
+        </p>
+        <ul class="steps">
+          <li><b>STEP 1</b>このフォームをご入力・送信</li>
+          <li><b>STEP 2</b>弊社で契約書を作成</li>
+          <li><b>STEP 3</b>契約書とマニフェストを<br>お届けします</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="gasWarn" class="notice hide noprint">
+      ただいま送信の準備中です。お手数ですが、お電話（06-6696-6789）またはメールにてご連絡ください。
+    </div>
+
+    <!-- 1. 排出事業者情報 -->
+    <div class="card">
+      <div class="chead"><span class="n">1</span>排出事業者情報（契約者）</div>
+      <div class="cbody">
+
+        <div class="field">
+          <label class="lab" for="f_hname">排出事業者名<span class="req">必須</span></label>
+          <div class="guide">廃棄物を出す契約者様（会社・個人）のお名前です。登記上の正式名称でご記入ください。
+<span class="ex">【例】〇〇株式会社　／　山田 太郎（個人の場合）</span></div>
+          <input id="f_hname" type="text" autocomplete="organization" placeholder="〇〇株式会社">
+          <div class="err" id="e_hname">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_haddr">排出事業者住所<span class="req">必須</span></label>
+          <div class="guide">契約者様の本社・ご自宅の住所をご記入ください。
+<span class="ex">【例】大阪市中央区〇〇町1-2-3　〇〇ビル5F</span></div>
+          <input id="f_haddr" type="text" autocomplete="street-address" placeholder="大阪市中央区〇〇町1-2-3　〇〇ビル5F">
+          <div class="err" id="e_haddr">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_htel">排出事業者電話番号<span class="req">必須</span></label>
+          <div class="guide">契約者様の連絡先電話番号です。
+<span class="ex">【例】06-1234-5678　／　090-0000-0000</span></div>
+          <input id="f_htel" type="tel" inputmode="tel" placeholder="06-1234-5678">
+          <div class="err" id="e_htel">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_daihyo">代表取締役<span class="req">必須</span></label>
+          <div class="guide">貴社（または個人）の代表者のお名前です。
+※個人契約の場合は、ご自身のお名前をご記入ください。
+<span class="ex">【例】山田 太郎</span></div>
+          <input id="f_daihyo" type="text" placeholder="山田 太郎">
+          <div class="err" id="e_daihyo">ご入力ください</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. 排出事業場情報 -->
+    <div class="card">
+      <div class="chead"><span class="n">2</span>排出事業場情報（実際に廃棄物が発生する場所）</div>
+      <div class="cbody">
+
+        <label class="samecheck noprint">
+          <input type="checkbox" id="sameAsHonsha">
+          排出事業場は「1. 排出事業者情報」と同じです
+        </label>
+
+        <div class="field">
+          <label class="lab" for="f_jname">排出事業場名<span class="req">必須</span></label>
+          <div class="guide">実際に廃棄物が出る場所（施設・店舗・物件）の名称です。
+※排出事業者と同じ場合は「同上」とご記入いただいても構いません。
+<span class="ex">【例】〇〇民泊　／　〇〇アパート</span></div>
+          <input id="f_jname" type="text" placeholder="〇〇アパート">
+          <div class="err" id="e_jname">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_jaddr">排出事業場住所<span class="req">必須</span></label>
+          <div class="guide">廃棄物が実際に出る場所の住所です。マンション・アパートの場合、排出される部屋番号をすべてご記入ください。
+※排出事業者と同じ場合は「同上」とご記入いただいても構いません。
+<span class="ex">【例】大阪市西成区〇〇1-2-3</span></div>
+          <input id="f_jaddr" type="text" placeholder="大阪市西成区〇〇1-2-3">
+          <div class="err" id="e_jaddr">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_jtel">排出事業場電話番号<span class="req">必須</span></label>
+          <div class="guide">排出事業場に繋がる電話番号です。排出事業者電話番号と同じで構いません。
+<span class="ex">【例】06-1234-5678　／　090-0000-0000</span></div>
+          <input id="f_jtel" type="tel" inputmode="tel" placeholder="06-1234-5678">
+          <div class="err" id="e_jtel">ご入力ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_kofu">交付担当者<span class="req">必須</span></label>
+          <div class="guide">マニフェスト（産業廃棄物管理票）を実際に受け渡しする担当者のお名前です。
+※個人契約の場合は、ご自身のお名前をご記入ください。
+<span class="ex">【例】田中 太郎</span></div>
+          <input id="f_kofu" type="text" placeholder="田中 太郎">
+          <div class="err" id="e_kofu">ご入力ください</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. 請求書について -->
+    <div class="card">
+      <div class="chead"><span class="n">3</span>請求書について</div>
+      <div class="cbody">
+
+        <div class="notice noprint" style="margin-bottom:16px">
+          この項目は<strong>「1. 排出事業者情報」と異なる場合のみ</strong>ご記入ください。同じであれば空欄で結構です。
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_saddr">請求書送付先住所<span class="opt">任意</span></label>
+          <div class="guide">請求書をお届けするご住所です。排出事業者住所と異なる場合のみご記入ください。
+<span class="ex">【例】大阪市中央区〇〇町1-2-3　〇〇ビル5F　経理部宛</span></div>
+          <input id="f_saddr" type="text" placeholder="（排出事業者住所と同じ場合は空欄）">
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_satena">請求書宛名<span class="opt">任意</span></label>
+          <div class="guide">請求書に記載するお宛名です。排出事業者名と異なる場合のみご記入ください。
+<span class="ex">【例】〇〇株式会社　経理部　御中　／　山田 太郎 様</span></div>
+          <input id="f_satena" type="text" placeholder="（排出事業者名と同じ場合は空欄）">
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_smail">請求書送付先メールアドレス<span class="opt">任意</span></label>
+          <div class="guide">請求書を電子（PDF）でお送りする際の宛先メールアドレスです。
+※ご記入いただくと、このアドレスに受付内容の控えもお送りします。
+<span class="ex">【例】keiri@example.co.jp</span></div>
+          <input id="f_smail" type="email" inputmode="email" autocomplete="email" placeholder="keiri@example.co.jp">
+          <div class="err" id="e_smail">メールアドレスの形式をご確認ください</div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="f_biko">ご要望・ご質問<span class="opt">任意</span></label>
+          <div class="guide">お伝えいただきたいことがあればご記入ください。
+<span class="ex">【例】請求書は月末締め翌月末払いを希望します</span></div>
+          <textarea id="f_biko" placeholder="ご自由にご記入ください"></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="actions noprint">
+      <button type="button" class="primary" id="btnConfirm">入力内容を確認する</button>
+    </div>
+  </div>
+
+  <!-- ============ 確認画面 ============ -->
+  <div id="screen-confirm" class="hide">
+    <div class="notice noprint">下記の内容で送信します。お間違いがないかご確認ください。</div>
+    <div class="card confirm">
+      <div class="chead">ご入力内容の確認</div>
+      <div class="cbody" id="confirmBody"></div>
+    </div>
+    <div class="actions noprint">
+      <button type="button" id="btnBack">修正する</button>
+      <button type="button" class="primary" id="btnSend">この内容で送信する</button>
+    </div>
+  </div>
+
+  <!-- ============ 完了画面 ============ -->
+  <div id="screen-done" class="hide">
+    <div class="card">
+      <div class="cbody done">
+        <div class="mark">✓</div>
+        <h2>送信が完了しました</h2>
+        <p>
+          ご入力いただき、ありがとうございました。<br>
+          内容を確認のうえ契約書を作成し、改めてご連絡いたします。<br><br>
+          しばらくお待ちくださいませ。
+        </p>
+        <div class="actions noprint" style="justify-content:center; margin-top:20px">
+          <button type="button" onclick="window.print()">この画面を印刷して控える</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cbody" id="doneBody"></div>
+    </div>
+  </div>
+
+  <footer class="app">
+    大泉衛生株式会社　〒546-0032 大阪市東住吉区東田辺3-26-31<br>
+    TEL 06-6696-6789（平日 8:30〜17:00）　／　d-daisen@aurora.ocn.ne.jp<br>
+    大阪府 産業廃棄物収集運搬業 許可番号 第02700173953号
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   ▼▼▼ ここだけ設定してください ▼▼▼
+   ============================================================ */
+
+// Google Apps Script のウェブアプリURL（トップページと同じもの）
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbzDvnU51JpK_u9unNQ2O308Z2eLbwReYGJX7EDf6hAVfaYXfVdrmGq_Fjw8m6zLfDDZ/exec';
+
+// 合言葉。GASコード.gs の SEND_KEY と同じ文字列にすること
+const SEND_KEY = 'dsn-k9x2m4vqrt';
+
+// このページの様式コード（GAS側で振り分けに使う）
+const FORM_TYPE = 'B';
+
+/* ============================================================
+   ▲▲▲ 設定はここまで ▲▲▲
+   ============================================================ */
+
+const FIELDS = [
+  { sec: '1. 排出事業者情報（契約者）',
+    items: [
+      { id: 'f_hname',  key: 'h_name',  label: '排出事業者名',       req: true },
+      { id: 'f_haddr',  key: 'h_addr',  label: '排出事業者住所',     req: true },
+      { id: 'f_htel',   key: 'h_tel',   label: '排出事業者電話番号', req: true },
+      { id: 'f_daihyo', key: 'daihyo',  label: '代表取締役',         req: true },
+    ]},
+  { sec: '2. 排出事業場情報',
+    items: [
+      { id: 'f_jname', key: 'j_name',     label: '排出事業場名',       req: true },
+      { id: 'f_jaddr', key: 'j_addr',     label: '排出事業場住所',     req: true },
+      { id: 'f_jtel',  key: 'j_tel',      label: '排出事業場電話番号', req: true },
+      { id: 'f_kofu',  key: 'kofu_tanto', label: '交付担当者',         req: true },
+    ]},
+  { sec: '3. 請求書について',
+    items: [
+      { id: 'f_saddr',  key: 'seikyu_addr',  label: '請求書送付先住所',           req: false },
+      { id: 'f_satena', key: 'seikyu_atena', label: '請求書宛名',                 req: false },
+      { id: 'f_smail',  key: 'seikyu_mail',  label: '請求書送付先メールアドレス', req: false, mail: true },
+      { id: 'f_biko',   key: 'biko',         label: 'ご要望・ご質問',             req: false },
+    ]},
+];
+
+const $ = (id) => document.getElementById(id);
+const val = (id) => ($(id).value || '').trim();
+
+/* --- 「同上」チェック --------------------------------------- */
+$('sameAsHonsha').addEventListener('change', function () {
+  if (!this.checked) return;
+  if (!val('f_jname')) $('f_jname').value = val('f_hname') || '同上';
+  if (!val('f_jaddr')) $('f_jaddr').value = val('f_haddr') || '同上';
+  if (!val('f_jtel'))  $('f_jtel').value  = val('f_htel');
+});
+
+/* --- 入力チェック ------------------------------------------- */
+function clearErr() {
+  document.querySelectorAll('.err').forEach(e => e.classList.remove('show'));
+  document.querySelectorAll('input,textarea').forEach(e => e.classList.remove('bad'));
+}
+function validate() {
+  clearErr();
+  let first = null;
+  FIELDS.forEach(g => g.items.forEach(f => {
+    const v = val(f.id);
+    let ng = false;
+    if (f.req && !v) ng = true;
+    if (f.mail && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) ng = true;
+    if (ng) {
+      $(f.id).classList.add('bad');
+      const e = $('e_' + f.id.slice(2));
+      if (e) e.classList.add('show');
+      if (!first) first = $(f.id);
+    }
+  }));
+  if (first) {
+    first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    first.focus({ preventScroll: true });
+    return false;
+  }
+  return true;
+}
+
+/* --- 確認画面 ----------------------------------------------- */
+function buildConfirm(target) {
+  let html = '';
+  FIELDS.forEach(g => {
+    html += '<h3>' + g.sec + '</h3><dl>';
+    g.items.forEach(f => {
+      const v = val(f.id);
+      html += '<div class="row"><dt>' + f.label + '</dt><dd' + (v ? '' : ' class="empty"') + '>'
+            + (v ? esc(v).replace(/\n/g, '<br>') : '（未入力）') + '</dd></div>';
+    });
+    html += '</dl>';
+  });
+  target.innerHTML = html;
+}
+function esc(s) {
+  return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function show(which) {
+  ['form', 'confirm', 'done'].forEach(k => $('screen-' + k).classList.toggle('hide', k !== which));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+$('btnConfirm').addEventListener('click', () => {
+  if (!validate()) return;
+  buildConfirm($('confirmBody'));
+  show('confirm');
+});
+$('btnBack').addEventListener('click', () => show('form'));
+
+/* --- 送信 --------------------------------------------------- */
+$('btnSend').addEventListener('click', async () => {
+  const btn = $('btnSend');
+  btn.disabled = true;
+  btn.textContent = '送信中…';
+
+  const payload = { key: SEND_KEY, form_type: FORM_TYPE };
+  FIELDS.forEach(g => g.items.forEach(f => { payload[f.key] = val(f.id); }));
+
+  try {
+    await fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+    });
+    buildConfirm($('doneBody'));
+    show('done');
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'この内容で送信する';
+    alert('送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。\n'
+        + '繰り返し失敗する場合は 06-6696-6789 までお電話ください。');
+  }
+});
+
+if (!GAS_URL) {
+  $('gasWarn').classList.remove('hide');
+  $('btnSend').disabled = true;
+}
+</script>
+</body>
+</html>

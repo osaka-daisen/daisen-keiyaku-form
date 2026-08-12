@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#1f6f5c">
+<title>契約書作成 依頼書メーカー（社内用）｜大泉衛生</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --sub:#5b6470; --line:#d9dee5; --line2:#eef1f5;
+    --bg:#f4f6f9; --card:#fff; --accent:#1f6f5c; --accent-d:#155445;
+    --warn:#b4451f; --chip:#eef4f2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif;
+    font-size:14px; line-height:1.6; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:1240px; margin:0 auto; padding:16px 16px 70px}
+
+  header.app{
+    display:flex; align-items:center; gap:13px; flex-wrap:wrap;
+    padding:13px 17px; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; margin-bottom:14px;
+  }
+  header.app .logo{
+    width:40px; height:40px; border-radius:9px; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:17px; flex:none;
+  }
+  header.app h1{font-size:16px; margin:0}
+  header.app .sub{font-size:11.5px; color:var(--sub); margin-top:2px}
+  header.app .spacer{flex:1}
+  .badge{
+    font-size:11px; font-weight:700; background:#fdecea; color:var(--warn);
+    border:1px solid #f3c7be; border-radius:999px; padding:3px 11px;
+  }
+
+  .layout{display:grid; grid-template-columns:minmax(0,420px) minmax(0,1fr); gap:14px; align-items:start}
+  @media (max-width:1000px){ .layout{grid-template-columns:1fr} }
+
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  .panel > .phead{
+    padding:10px 15px; border-bottom:1px solid var(--line2); background:#fbfcfd;
+    font-weight:700; font-size:12.5px; color:var(--sub);
+    display:flex; align-items:center; gap:8px;
+  }
+  .panel .pbody{padding:14px 15px}
+
+  fieldset{border:none; margin:0 0 16px; padding:0}
+  fieldset:last-child{margin-bottom:0}
+  legend{
+    font-size:11.5px; font-weight:700; color:var(--accent-d);
+    background:var(--chip); border-radius:999px; padding:3px 11px; margin-bottom:9px;
+  }
+  legend .tag{
+    display:inline-block; margin-left:6px; font-size:10px; padding:1px 6px;
+    border-radius:3px; background:#fff; border:1px solid #cfe3dc;
+  }
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:9px 10px}
+  .grid .full{grid-column:1/-1}
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} }
+  label.f{display:block}
+  label.f .lab{display:block; font-size:11.5px; color:var(--sub); font-weight:700; margin-bottom:3px}
+  input,select,textarea{
+    width:100%; padding:8px 9px; border:1px solid var(--line); border-radius:7px;
+    font:inherit; font-size:13px; background:#fff; color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid #bfe0d6; border-color:var(--accent)}
+  input[readonly]{background:#f6f8fa; color:#4a5560}
+  .hint{font-size:11px; color:var(--sub); margin-top:3px}
+
+  .checks{display:grid; grid-template-columns:repeat(auto-fill,minmax(126px,1fr)); gap:6px}
+  .checks label{
+    display:flex; align-items:center; gap:6px; padding:7px 9px; font-size:12.5px;
+    border:1px solid var(--line); border-radius:7px; background:#fff; cursor:pointer;
+  }
+  .checks label:has(input:checked){background:var(--chip); border-color:var(--accent); font-weight:700; color:var(--accent-d)}
+  .checks input{width:auto; margin:0; flex:none; accent-color:var(--accent)}
+
+  .btnrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
+  button{
+    font:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line);
+    background:#fff; color:var(--ink); border-radius:8px; padding:9px 15px; font-weight:700;
+  }
+  button:hover{background:#f7f9fa}
+  button.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  button.primary:hover{background:var(--accent-d)}
+  button.mini{padding:5px 10px; font-size:11.5px; font-weight:700}
+
+  .tabs{display:flex; gap:6px; padding:10px 15px 0; flex-wrap:wrap}
+  .tabs button{
+    border-radius:8px 8px 0 0; border-bottom-color:transparent; background:#f2f5f7; color:var(--sub);
+  }
+  .tabs button.on{background:var(--accent); border-color:var(--accent); color:#fff}
+
+  .stage{padding:14px; background:#e9edf1; overflow:auto}
+  .msg{
+    font-size:12.5px; background:#fff7ed; border:1px solid #f0d5b8; color:#8a5220;
+    padding:9px 12px; border-radius:8px; margin-bottom:12px;
+  }
+  .msg.ok{background:var(--chip); border-color:#bfe0d6; color:var(--accent-d)}
+  .msg.ng{background:#fdecea; border-color:#f3c7be; color:var(--warn)}
+
+  /* ===== 書面共通 ===== */
+  .doc{
+    width:190mm; min-height:272mm; margin:0 auto; background:#fff; padding:14mm 13mm;
+    color:#111; font-size:12px; line-height:1.55; box-shadow:0 1px 6px rgba(0,0,0,.14);
+    font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  }
+  .doc.hide{display:none}
+  .doc h2{font-size:19px; margin:0 0 6mm; letter-spacing:.14em; text-align:center; font-weight:700}
+  .doc .to{font-size:12.5px; line-height:1.9; margin-bottom:6mm}
+  .doc .to b{font-size:14px}
+  .doc table{width:100%; border-collapse:collapse}
+  .doc th,.doc td{border:1px solid #111; padding:2.6mm 3mm; vertical-align:middle; font-size:12px}
+  .doc th{width:44mm; background:#f4f6f7; text-align:left; font-weight:700; white-space:nowrap}
+  .doc td{min-height:8mm}
+  .doc .note{font-size:11px; margin-top:5mm}
+  .doc .from{margin-top:8mm; font-size:11.5px; line-height:1.8; text-align:right}
+  .doc .empty{color:#c0c6cc}
+
+  /* 関西クリアセンター用シート */
+  .doc .sec{
+    background:#4f7f6f; color:#fff; font-weight:700; font-size:12.5px;
+    padding:2mm 3mm; margin:5mm 0 0; border:1px solid #4f7f6f;
+  }
+  .doc .sec:first-of-type{margin-top:0}
+  .doc .sec + table th{background:#eaf2ee}
+  .doc .lead{font-size:11px; color:#444; margin:0 0 5mm}
+
+  @media print{
+    @page{size:A4 portrait; margin:0}
+    body{background:#fff}
+    .noprint{display:none !important}
+    .wrap{max-width:none; padding:0}
+    .stage{padding:0; background:#fff}
+    .doc{width:auto; min-height:auto; margin:0; box-shadow:none; padding:12mm 11mm}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app noprint">
+    <div class="logo">大泉</div>
+    <div>
+      <h1>契約書作成 依頼書メーカー</h1>
+      <div class="sub">お客様フォームの入力内容から、2種類の書類をPDFで作ります</div>
+    </div>
+    <div class="spacer"></div>
+    <span class="badge">社内用</span>
+  </header>
+
+  <div class="layout">
+
+    <!-- ================= 入力 ================= -->
+    <div class="panel noprint">
+      <div class="phead">
+        入力
+        <span style="flex:1"></span>
+        <button type="button" class="mini" id="btnClear">全部消す</button>
+      </div>
+      <div class="pbody">
+
+        <div id="loadMsg" class="msg" style="display:none"></div>
+
+        <fieldset>
+          <legend>案件の読み込み</legend>
+          <div class="btnrow" style="margin-bottom:8px">
+            <button type="button" id="btnLoad">台帳から読み込む</button>
+          </div>
+          <div class="hint">
+            通知メールの「この案件で書類を作る」リンクから開くと、お客様の入力内容が自動で入ります。
+            手入力で作る場合はそのまま下へ進んでください。
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>お客様の入力内容<span class="tag">フォームから自動</span></legend>
+          <div class="grid">
+            <label class="f full"><span class="lab">排出事業者名</span><input id="h_name"></label>
+            <label class="f full"><span class="lab">排出事業者住所</span><input id="h_addr"></label>
+            <label class="f"><span class="lab">排出事業者電話番号</span><input id="h_tel"></label>
+            <label class="f"><span class="lab">代表者 役職・氏名</span><input id="daihyo"></label>
+            <label class="f full"><span class="lab">排出事業場名</span><input id="j_name"></label>
+            <label class="f full"><span class="lab">排出事業場住所</span><input id="j_addr"></label>
+            <label class="f"><span class="lab">排出事業場電話番号</span><input id="j_tel"></label>
+            <label class="f"><span class="lab">交付担当者</span><input id="kofu_tanto"></label>
+            <label class="f"><span class="lab">契約担当者名</span><input id="tanto_name"></label>
+            <label class="f"><span class="lab">役職</span><input id="tanto_yaku"></label>
+            <label class="f"><span class="lab">電話番号</span><input id="tanto_tel"></label>
+            <label class="f"><span class="lab">メールアドレス</span><input id="tanto_mail"></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>共通</legend>
+          <div class="grid">
+            <label class="f"><span class="lab">契約開始日</span><input id="kikan_from" type="date"></label>
+            <label class="f"><span class="lab">契約終了日</span><input id="kikan_to" type="date"></label>
+          </div>
+          <div class="btnrow" style="margin-top:7px">
+            <button type="button" class="mini" id="btnOneYear">開始日から1年（前日まで）</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>さつき用<span class="tag">契約書作成依頼書</span></legend>
+          <div style="margin-bottom:9px">
+            <span class="lab" style="display:block; font-size:11.5px; color:var(--sub); font-weight:700; margin-bottom:5px">契約種類</span>
+            <div class="checks" id="shurui">
+              <label><input type="checkbox" value="廃プラスチック" checked>廃プラスチック</label>
+              <label><input type="checkbox" value="金属くず" checked>金属くず</label>
+              <label><input type="checkbox" value="ガラスくず" checked>ガラスくず</label>
+              <label><input type="checkbox" value="木くず" checked>木くず</label>
+              <label><input type="checkbox" value="繊維くず" checked>繊維くず</label>
+            </div>
+          </div>
+          <div class="grid">
+            <label class="f"><span class="lab">契約書数量（収運用）</span><input id="su_shuun" placeholder="月20㎏　年間240㎏"></label>
+            <label class="f"><span class="lab">契約単価（収運用）</span><input id="tan_shuun" placeholder="月800円　年間9,600円"></label>
+            <label class="f"><span class="lab">契約数量（処分用）</span><input id="su_shobun" placeholder="月20㎏　年間240㎏"></label>
+            <label class="f"><span class="lab">契約単価（処分用）</span><input id="tan_shobun" placeholder="月800円　年間9,600円"></label>
+            <label class="f"><span class="lab">契約締結日</span><input id="teiketsu" type="date"></label>
+            <label class="f"><span class="lab">マニフェスト枚数</span><input id="manifest" placeholder="1"></label>
+          </div>
+          <div class="btnrow" style="margin-top:7px">
+            <button type="button" class="mini" id="btnCopySu">収運用の内容を処分用にコピー</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>関西クリアセンター用<span class="tag">お客様情報シート</span></legend>
+          <div class="grid">
+            <label class="f full"><span class="lab">産業廃棄物の種類</span><input id="k_shurui" placeholder="混合廃棄物"></label>
+            <label class="f"><span class="lab">処分予定量</span><input id="k_ryo" placeholder="3t／月"></label>
+            <label class="f"><span class="lab">荷姿</span>
+              <select id="k_nisugata">
+                <option value=""></option>
+                <option>箱詰め（段ボール）</option><option>バラ積み</option>
+                <option>フレコンバッグ</option><option>パレット積み</option>
+                <option>コンテナ</option><option>結束</option>
+                <option>ドラム缶</option><option>その他</option>
+              </select>
+            </label>
+            <label class="f"><span class="lab">収集運搬費</span><input id="k_unpan" placeholder="20,000円／台"></label>
+            <label class="f"><span class="lab">処分単価</span><input id="k_tanka" placeholder="60円／kg"></label>
+            <label class="f"><span class="lab">運搬手配区分</span>
+              <select id="k_tehai">
+                <option value=""></option>
+                <option>弊社持ち込み</option><option>関西クリアセンター手配</option>
+              </select>
+            </label>
+            <label class="f"><span class="lab">契約区分</span>
+              <select id="k_kubun">
+                <option value=""></option>
+                <option>スポット契約</option><option>自動更新契約</option>
+              </select>
+            </label>
+            <label class="f full"><span class="lab">契約書の用途</span>
+              <select id="k_yoto">
+                <option value=""></option>
+                <option>処分用</option><option>収集運搬用</option>
+                <option>処分用・収集運搬用の両方</option>
+              </select>
+            </label>
+            <label class="f full"><span class="lab">電子契約の希望</span>
+              <select id="k_denshi">
+                <option value=""></option>
+                <option>有り（電子契約システム weee を使用）</option>
+                <option>有り（weee 以外のシステムを使用）</option>
+                <option>無し（紙で契約）</option>
+              </select>
+            </label>
+            <label class="f"><span class="lab">搬入予定日</span><input id="k_hannyu" placeholder="2026年9月15日"></label>
+            <label class="f"><span class="lab">搬入台数</span><input id="k_daisu" placeholder="1台もしくは2台"></label>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+
+    <!-- ================= プレビュー ================= -->
+    <div class="panel">
+      <div class="tabs noprint">
+        <button type="button" class="on" data-doc="satsuki">さつき書面</button>
+        <button type="button" data-doc="kansai">関西クリアセンター シート</button>
+        <span style="flex:1"></span>
+        <button type="button" class="primary" id="btnPrint" style="border-radius:8px; margin-bottom:6px">
+          この書類をPDFにする
+        </button>
+      </div>
+      <div class="stage">
+
+        <!-- ===== さつき書面 ===== -->
+        <div class="doc" id="doc-satsuki">
+          <h2>契約書作成依頼書</h2>
+          <div class="to">
+            <b>株式会社さつき　御中</b><br>
+            営業部　原　拓史様<br>
+            TEL:06-4394-0057　FAX：06-4394-0058
+          </div>
+          <table>
+            <tr><th>排出事業者名</th><td id="s1"></td></tr>
+            <tr><th>排出事業者住所</th><td id="s2"></td></tr>
+            <tr><th>排出事業者電話番号</th><td id="s3"></td></tr>
+            <tr><th>排出事業場名</th><td id="s4"></td></tr>
+            <tr><th>排出事業場住所</th><td id="s5"></td></tr>
+            <tr><th>排出事業場電話番号</th><td id="s6"></td></tr>
+            <tr><th>契約種類</th><td id="s7"></td></tr>
+            <tr><th>契約書数量（収運用）</th><td id="s8"></td></tr>
+            <tr><th>契約単価（収運用）</th><td id="s9"></td></tr>
+            <tr><th>契約数量（処分用）</th><td id="s10"></td></tr>
+            <tr><th>契約単価（処分用）</th><td id="s11"></td></tr>
+            <tr><th>契約期間</th><td id="s12"></td></tr>
+            <tr><th>契約締結日</th><td id="s13"></td></tr>
+            <tr><th>マニフェスト枚数</th><td id="s14"></td></tr>
+            <tr><th>交付担当者</th><td id="s15"></td></tr>
+            <tr><th>代表取締役</th><td id="s16"></td></tr>
+          </table>
+          <div class="note">※ 産業廃棄物処理契約書の作成をご依頼いたします。</div>
+          <div class="from">
+            大泉衛生株式会社<br>
+            〒546-0032 大阪市東住吉区東田辺3-26-31<br>
+            TEL 06-6696-6789　FAX 06-6696-6780
+          </div>
+        </div>
+
+        <!-- ===== 関西クリアセンター シート ===== -->
+        <div class="doc hide" id="doc-kansai">
+          <h2>産業廃棄物処理委託契約　お客様情報シート</h2>
+          <p class="lead">株式会社関西クリアセンター　御中</p>
+
+          <div class="sec">■ 排出事業者情報（契約者）</div>
+          <table>
+            <tr><th>排出事業者住所</th><td id="k1"></td></tr>
+            <tr><th>排出事業者名称</th><td id="k2"></td></tr>
+            <tr><th>代表者</th><td id="k3"></td></tr>
+          </table>
+
+          <div class="sec">■ 排出事業場情報（実際に廃棄物が発生する場所）</div>
+          <table>
+            <tr><th>排出事業場住所</th><td id="k4"></td></tr>
+            <tr><th>排出事業場名称</th><td id="k5"></td></tr>
+          </table>
+
+          <div class="sec">■ 電子契約に関する情報</div>
+          <table>
+            <tr><th>電子契約担当者名</th><td id="k6"></td></tr>
+            <tr><th>役職</th><td id="k7"></td></tr>
+            <tr><th>電話番号</th><td id="k8"></td></tr>
+            <tr><th>メールアドレス</th><td id="k9"></td></tr>
+          </table>
+
+          <div class="sec">■ 大泉衛生記入欄</div>
+          <table>
+            <tr><th>産業廃棄物の種類</th><td id="k10"></td></tr>
+            <tr><th>処分予定量</th><td id="k11"></td></tr>
+            <tr><th>荷姿</th><td id="k12"></td></tr>
+            <tr><th>収集運搬費</th><td id="k13"></td></tr>
+            <tr><th>処分単価</th><td id="k14"></td></tr>
+            <tr><th>運搬手配区分</th><td id="k15"></td></tr>
+            <tr><th>契約区分</th><td id="k16"></td></tr>
+            <tr><th>契約書の用途</th><td id="k17"></td></tr>
+            <tr><th>電子契約の希望</th><td id="k18"></td></tr>
+            <tr><th>契約期間</th><td id="k19"></td></tr>
+            <tr><th>搬入予定日</th><td id="k20"></td></tr>
+            <tr><th>搬入台数</th><td id="k21"></td></tr>
+          </table>
+
+          <div class="from">
+            大泉衛生株式会社<br>
+            〒546-0032 大阪市東住吉区東田辺3-26-31<br>
+            TEL 06-6696-6789　FAX 06-6696-6780
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   設定
+   ============================================================ */
+const GAS_URL  = 'https://script.google.com/macros/s/AKfycbzDvnU51JpK_u9unNQ2O308Z2eLbwReYGJX7EDf6hAVfaYXfVdrmGq_Fjw8m6zLfDDZ/exec';
+const SEND_KEY = 'dsn-k9x2m4vqrt';
+const STORE    = 'daisen_keiyaku_maker_v1';
+
+const $ = (id) => document.getElementById(id);
+const v  = (id) => ($(id).value || '').trim();
+
+/* 入力欄の一覧（保存・復元用） */
+const INPUTS = [
+  'h_name','h_addr','h_tel','daihyo','j_name','j_addr','j_tel','kofu_tanto',
+  'tanto_name','tanto_yaku','tanto_tel','tanto_mail',
+  'kikan_from','kikan_to',
+  'su_shuun','tan_shuun','su_shobun','tan_shobun','teiketsu','manifest',
+  'k_shurui','k_ryo','k_nisugata','k_unpan','k_tanka','k_tehai','k_kubun',
+  'k_yoto','k_denshi','k_hannyu','k_daisu'
+];
+
+/* ------------------------------------------------------------
+   日付まわり
+   ------------------------------------------------------------ */
+function ymd(s) {                       // 2026-07-31 → {y,m,d}
+  if (!s) return null;
+  const p = s.split('-').map(Number);
+  return p.length === 3 && p.every(n => !isNaN(n)) ? { y: p[0], m: p[1], d: p[2] } : null;
+}
+function seireki(s) {                   // 2026年7月31日
+  const t = ymd(s);
+  return t ? `${t.y}年${t.m}月${t.d}日` : '';
+}
+function wareki(s) {                    // 令和8年7月31日
+  const t = ymd(s);
+  if (!t) return '';
+  if (t.y >= 2019) {
+    const n = t.y - 2018;
+    return `令和${n === 1 ? '元' : n}年${t.m}月${t.d}日`;
+  }
+  return seireki(s);
+}
+function addYearMinus1Day(s) {          // 開始日 → 1年後の前日
+  const t = ymd(s);
+  if (!t) return '';
+  const d = new Date(t.y + 1, t.m - 1, t.d);
+  d.setDate(d.getDate() - 1);
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/* ------------------------------------------------------------
+   書面の描画
+   ------------------------------------------------------------ */
+function put(id, text) {
+  const el = $(id);
+  if (!el) return;
+  if (text) { el.textContent = text; el.classList.remove('empty'); }
+  else      { el.textContent = '—';  el.classList.add('empty'); }
+}
+
+function render() {
+  /* --- さつき書面 --- */
+  put('s1', v('h_name'));
+  put('s2', v('h_addr'));
+  put('s3', v('h_tel'));
+  put('s4', v('j_name'));
+  put('s5', v('j_addr'));
+  put('s6', v('j_tel'));
+
+  const boxes = [...document.querySelectorAll('#shurui input')];
+  put('s7', boxes.map(b => (b.checked ? '☑' : '□') + b.value).join('　'));
+
+  put('s8',  v('su_shuun'));
+  put('s9',  v('tan_shuun'));
+  put('s10', v('su_shobun'));
+  put('s11', v('tan_shobun'));
+
+  const f = v('kikan_from'), t = v('kikan_to');
+  put('s12', f || t ? `${wareki(f)}～${wareki(t)}` : '');   // さつきは令和表記
+  put('s13', seireki(v('teiketsu')));                       // 締結日は西暦表記
+  const mf = v('manifest');
+  put('s14', mf ? (/^\d+$/.test(mf) ? mf + '枚' : mf) : '');
+  put('s15', v('kofu_tanto'));
+  put('s16', v('daihyo'));
+
+  /* --- 関西クリアセンター シート --- */
+  put('k1', v('h_addr'));
+  put('k2', v('h_name'));
+  put('k3', v('daihyo'));
+  put('k4', v('j_addr'));
+  put('k5', v('j_name'));
+  put('k6', v('tanto_name'));
+  put('k7', v('tanto_yaku'));
+  put('k8', v('tanto_tel'));
+  put('k9', v('tanto_mail'));
+  put('k10', v('k_shurui'));
+  put('k11', v('k_ryo'));
+  put('k12', v('k_nisugata'));
+  put('k13', v('k_unpan'));
+  put('k14', v('k_tanka'));
+  put('k15', v('k_tehai'));
+  put('k16', v('k_kubun'));
+  put('k17', v('k_yoto'));
+  put('k18', v('k_denshi'));
+  put('k19', f || t ? `${seireki(f)}～${seireki(t)}` : '');  // 関西クリアは西暦表記
+  put('k20', v('k_hannyu'));
+  put('k21', v('k_daisu'));
+
+  save();
+}
+
+/* ------------------------------------------------------------
+   保存・復元（この端末のブラウザ内）
+   ------------------------------------------------------------ */
+function save() {
+  const o = { _shurui: [...document.querySelectorAll('#shurui input')].map(b => b.checked) };
+  INPUTS.forEach(id => o[id] = v(id));
+  try { localStorage.setItem(STORE, JSON.stringify(o)); } catch (e) {}
+}
+function restore() {
+  let o;
+  try { o = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) { return; }
+  if (!o) return;
+  INPUTS.forEach(id => { if (o[id] != null) $(id).value = o[id]; });
+  if (Array.isArray(o._shurui)) {
+    [...document.querySelectorAll('#shurui input')].forEach((b, i) => {
+      if (o._shurui[i] != null) b.checked = o._shurui[i];
+    });
+  }
+}
+
+/* ------------------------------------------------------------
+   台帳からの読み込み
+   ------------------------------------------------------------ */
+function msg(text, cls) {
+  const el = $('loadMsg');
+  el.style.display = text ? 'block' : 'none';
+  el.className = 'msg' + (cls ? ' ' + cls : '');
+  el.textContent = text;
+}
+
+async function loadRecord(id) {
+  if (!id) { msg('通知メールの「この案件で書類を作る」リンクから開いてください。手入力でも作れます。'); return; }
+  msg('台帳から読み込んでいます…');
+  try {
+    const url = GAS_URL + '?key=' + encodeURIComponent(SEND_KEY) + '&id=' + encodeURIComponent(id);
+    const r = await fetch(url);
+    const j = await r.json();
+    if (!j.ok) { msg('読み込めませんでした：' + (j.error || '不明なエラー'), 'ng'); return; }
+    const d = j.data || {};
+    ['h_name','h_addr','h_tel','daihyo','j_name','j_addr','j_tel','kofu_tanto',
+     'tanto_name','tanto_yaku','tanto_tel','tanto_mail'].forEach(k => {
+      if (d[k]) $(k).value = d[k];
+    });
+    render();
+    msg('「' + (d.h_name || '') + '」を読み込みました。大泉衛生記入欄をご入力ください。', 'ok');
+  } catch (e) {
+    msg('通信に失敗しました。もう一度お試しください。', 'ng');
+  }
+}
+
+/* ------------------------------------------------------------
+   操作
+   ------------------------------------------------------------ */
+document.querySelectorAll('.tabs button[data-doc]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button[data-doc]').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    $('doc-satsuki').classList.toggle('hide', b.dataset.doc !== 'satsuki');
+    $('doc-kansai').classList.toggle('hide', b.dataset.doc !== 'kansai');
+  });
+});
+
+$('btnPrint').addEventListener('click', () => window.print());
+
+$('btnOneYear').addEventListener('click', () => {
+  const to = addYearMinus1Day(v('kikan_from'));
+  if (to) { $('kikan_to').value = to; render(); }
+});
+
+$('btnCopySu').addEventListener('click', () => {
+  $('su_shobun').value  = v('su_shuun');
+  $('tan_shobun').value = v('tan_shuun');
+  render();
+});
+
+$('btnLoad').addEventListener('click', () => {
+  const id = prompt('案件ID（通知メールに書かれています）を貼り付けてください');
+  if (id) loadRecord(id.trim());
+});
+
+$('btnClear').addEventListener('click', () => {
+  if (!confirm('入力した内容をすべて消します。よろしいですか？')) return;
+  INPUTS.forEach(id => $(id).value = '');
+  document.querySelectorAll('#shurui input').forEach(b => b.checked = true);
+  localStorage.removeItem(STORE);
+  msg('');
+  render();
+});
+
+document.addEventListener('input', render);
+document.addEventListener('change', render);
+
+/* 起動時 */
+restore();
+const qid = new URLSearchParams(location.search).get('id');
+if (qid) loadRecord(qid); else render();
+</script>
+</body>
+</html>
